@@ -81,10 +81,10 @@ def test_skill_frontmatter_is_dsh_compatible() -> None:
 def test_docs_document_the_install_path() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     bundle_readme = (DSH_DIR / "README.md").read_text(encoding="utf-8")
-    assert "dsh plugin" in readme
+    assert "npx @deepseek-ai/dsh plugin --profile web add link:./dsh" in readme
     assert "mcp__paper-search__" in readme
     assert "git clone https://github.com/openags/paper-search-mcp.git" in bundle_readme
-    assert "dsh plugin --profile web add link:./dsh" in bundle_readme
+    assert "npx @deepseek-ai/dsh plugin --profile web add link:./dsh" in bundle_readme
     assert "npx @deepseek-ai/dsh" in bundle_readme
     assert "~/.config/paper-search-mcp/.env" in bundle_readme
 

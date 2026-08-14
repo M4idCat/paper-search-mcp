@@ -6,21 +6,21 @@ The bundle only mounts a composition row — it never patches or replaces the MC
 
 ## Install
 
-**Prerequisites**: [uv](https://docs.astral.sh/uv/getting-started/installation/) (the default launcher is `uvx`) and [pnpm](https://pnpm.io/installation) (`dsh plugin` forwards to pnpm). If `dsh` is not on your PATH, prefix every command with `npx @deepseek-ai/dsh`, e.g. `npx @deepseek-ai/dsh plugin --profile web add ...`.
+**Prerequisites**: [uv](https://docs.astral.sh/uv/getting-started/installation/) (the default launcher is `uvx`) and [pnpm](https://pnpm.io/installation) (`dsh plugin` forwards to pnpm). Commands below use the `npx @deepseek-ai/dsh` launcher (no global install); with a global dsh install, drop the prefix.
 
 Clone the paper-search-mcp repository and link the bundle into your profile:
 
 ```sh
 git clone https://github.com/openags/paper-search-mcp.git
 cd paper-search-mcp
-dsh plugin --profile web add link:./dsh
+npx @deepseek-ai/dsh plugin --profile web add link:./dsh
 ```
 
 The `link:` spec symlinks the live checkout into the profile, so the profile always reads this directory's `cordis.patch.yml` — `git pull` in the checkout is the upgrade path.
 
-Replace `web` with your profile name — any profile works; one that does not exist yet is initialized automatically. Restart the profile (`dsh web`, or relaunch) to activate. The model then sees `mcp__paper-search__search_papers`, `mcp__paper-search__download_with_fallback`, `mcp__paper-search__search_arxiv`, and the other server tools.
+Replace `web` with your profile name — any profile works; one that does not exist yet is initialized automatically. Restart the profile (`npx @deepseek-ai/dsh web`, or relaunch) to activate. The model then sees `mcp__paper-search__search_papers`, `mcp__paper-search__download_with_fallback`, `mcp__paper-search__search_arxiv`, and the other server tools.
 
-Remove: `dsh plugin --profile web remove paper-search-mcp-dsh` (the row is reconciled out of the composition automatically).
+Remove: `npx @deepseek-ai/dsh plugin --profile web remove paper-search-mcp-dsh` (the row is reconciled out of the composition automatically).
 
 ## Optional API keys
 
