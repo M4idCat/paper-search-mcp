@@ -82,6 +82,7 @@ def test_docs_document_the_install_path() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     bundle_readme = (DSH_DIR / "README.md").read_text(encoding="utf-8")
     assert "npx @deepseek-ai/dsh plugin --profile web add link:./dsh" in readme
+    assert "npx @deepseek-ai/dsh plugin --profile web remove paper-search-mcp-dsh" in readme
     assert "mcp__paper-search__" in readme
     assert "git clone https://github.com/openags/paper-search-mcp.git" in bundle_readme
     assert "npx @deepseek-ai/dsh plugin --profile web add link:./dsh" in bundle_readme

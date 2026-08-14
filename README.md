@@ -486,7 +486,16 @@ npx @deepseek-ai/dsh plugin --profile web add link:./dsh
 mkdir -p ~/.dsh/skills && cp -r dsh/skills/paper-search ~/.dsh/skills/
 ```
 
-If you already run paper-search-mcp through your own `@deepseek-ai/dsh-mcp-client` row, remove that row (or give one of the two a distinct `serverName`) before adding the bundle — duplicate `serverName`s fail at load. The bundle package version tracks the PyPI release it was tested with; `dsh/README.md` documents alternate launchers (`uv tool run`, `python -m`, `npx`), upgrade/removal, and development.
+**Uninstall**:
+
+```bash
+npx @deepseek-ai/dsh plugin --profile web remove paper-search-mcp-dsh
+rm -rf ~/.dsh/skills/paper-search
+```
+
+Removing the bundle reconciles it out of the composition automatically; deleting the clone afterwards leaves no trace.
+
+If you already run paper-search-mcp through your own `@deepseek-ai/dsh-mcp-client` row, remove that row (or give one of the two a distinct `serverName`) before adding the bundle — duplicate `serverName`s fail at load. The bundle package version tracks the PyPI release it was tested with; `dsh/README.md` documents alternate launchers (`uv tool run`, `python -m`, `npx`), environment forwarding, and development.
 
 ---
 
