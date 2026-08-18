@@ -56,7 +56,7 @@ The default `uvx paper-search-mcp` runs the latest PyPI release with no install.
 `skills/paper-search/SKILL.md` (in this repository) is a model-guidance skill (usage workflow, source table, tool mapping) — the MCP tools work without it. From the checkout:
 
 ```sh
-mkdir -p ~/.dsh/skills && cp -r skills/paper-search ~/.dsh/skills/
+mkdir -p ~/.dsh/skills && cp -r dsh/skills/paper-search ~/.dsh/skills/
 ```
 
 ## Naming and conflicts
